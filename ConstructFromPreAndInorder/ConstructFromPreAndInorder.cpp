@@ -4,7 +4,6 @@
 #include <iostream>
 #include <map>
 #include <queue>
-#include <stack>
 #include <vector>
 
 class Node
@@ -20,37 +19,6 @@ public:
         , right(nullptr)
     {}
 };
-
-Node* ArrayToTree(const std::vector<int>& v)
-{
-    if (v.size() == 0)
-        return nullptr;
-    Node* root = new Node(v[0]);
-    std::queue<Node*> q;
-    q.push(root);
-    bool l = true;
-    for (size_t i = 1; i < v.size(); ++i, l = !l)
-    {
-        Node* pNode = q.front();
-        if (!l)
-            q.pop();
-        if (v[i] != -1)
-        {
-            if (l)
-            {
-                pNode->left = new Node(v[i]);
-                q.push(pNode->left);
-            }
-            else
-            {
-                pNode->right = new Node(v[i]);
-                q.push(pNode->right);
-            }
-        }
-    }
-
-    return root;
-}
 
 void FreeTree(Node* pNode)
 {
