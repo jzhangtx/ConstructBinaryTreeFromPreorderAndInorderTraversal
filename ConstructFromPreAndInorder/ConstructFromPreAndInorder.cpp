@@ -95,11 +95,11 @@ int main()
         if (count == 0)
             break;
 
-        std::cout << "Inorder array: ";
+        std::cout << "Preorder array: ";
         std::vector<int> preorder(count, 0);
         for (int i = 0; i < count; ++i)
             std::cin >> preorder[i];
-
+        std::cout << "Inorder array: ";
         std::vector<int> inorder(count, 0);
         for (int i = 0; i < count; ++i)
             std::cin >> inorder[i];
